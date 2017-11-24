@@ -31,7 +31,7 @@ class WeatherSimulator extends Component {
 
   componentDidMount() {
     ;
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=Nashville&appid=${api_key}`, {
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=Flagstaff&appid=${api_key}`, {
       method: 'GET'
     })
       .then(response => response.json())
@@ -48,7 +48,7 @@ class WeatherSimulator extends Component {
         justifyContent: 'center',
         alignItems: 'center'}
       }>
-        <Pano source={asset('lombard-vr.jpg')}></Pano>
+        <Pano source={asset('canyon.jpg')}></Pano>
         <WeatherCard weatherObject={this.state.weatherObject}/>
         <WindCloudObject wind={this.state.weatherObject.wind}/>
       </View>

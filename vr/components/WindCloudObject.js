@@ -12,7 +12,7 @@ export default class WindCloudObject extends Component {
       xValue: new Animated.Value(100)
     }
 
-    setInterval(() => this.animateCloud(), 10000);
+    setInterval(() => this.animateCloud(), 40000);
   }
 
   componentDidMount() {
@@ -26,7 +26,7 @@ export default class WindCloudObject extends Component {
     } else {
       Animated.timing(this.state.xValue, {
         toValue: -100,
-        duration: 30000/this.props.wind.speed
+        duration: 40000/this.props.wind.speed
       }).start();
     }
   }
@@ -44,11 +44,15 @@ export default class WindCloudObject extends Component {
         }}
         >
         <Model
-          scale={0.01}
+          // scale={0.01}
           source={{
             obj: asset('multi_clouds.obj')
           }}
-          texture={'http://www.graphicsfuel.com/wp-content/uploads/2012/01/clouds-texture02-preview.jpg'}
+          style={{transform: [
+              {translate: [0, 0, -2]}
+          ]}}
+          texture={"https://78.media.tumblr.com/0666b11493f438e6cdf980f7d66925ac/tumblr_oy8jogSfcf1uxolajo1_500.jpg"}
+          wireframe={false}
         />
       </Animated.View>
     )
