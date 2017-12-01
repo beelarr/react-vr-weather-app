@@ -4,20 +4,14 @@ import { View, Text, Image, StyleSheet } from 'react-vr';
 
 export default class WeatherCard extends Component {
 
-  // fTemp = () => {
-  //   kelvin = this.props.weatherObject.main.temp;
-  //   console.log('kelvin', kelvin);
-  //     far = 1.8 * (kelvin - 273) + 32;
-  //     console.log('far', far);
-  //     return far
-  // }
+
 
   render() {
     return (
       <View style={styles.weatherCard}>
         <Text style={styles.weatherText}>{this.props.weatherObject.name}</Text>
         <Text style={styles.weatherText}>Current Weather: {this.props.weatherObject.weather[0].description}</Text>
-        <Text style={styles.weatherText}>Temperature: {Math.round(1.8* (this.props.weatherObject.main.temp - 273) + 32)}°</Text>
+        <Text style={styles.weatherText}>Temperature: {Math.round(1.8 * (this.props.weatherObject.main.temp - 273) + 32)}°</Text>
         <Text style={styles.weatherText}>Wind Speed: {this.props.weatherObject.wind.speed}mph</Text>
       </View>
     )

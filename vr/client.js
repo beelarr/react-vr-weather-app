@@ -2,6 +2,11 @@
 // This file contains the boilerplate to set up your React app.
 // If you want to modify your application, start in "index.vr.js"
 
+import 'webvr-polyfill';
+WebVRPolyfill.InstallWebVRSpecShim();
+
+
+
 // Auto-generated content.
 import {VRInstance} from 'react-vr-web';
 
